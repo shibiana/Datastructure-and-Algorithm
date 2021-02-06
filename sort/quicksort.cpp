@@ -4,7 +4,7 @@ using namespace std;
 int* partition(int arr[], int l, int r);
 void quicksort(int arr[], int l, int r)
 {
-    if(l<r)
+    if(l<r) //注意要判断
     {
         int* p = partition(arr,l, r);
         quicksort(arr,l,p[0]-1);
@@ -26,11 +26,12 @@ void swap(int arr[], int l, int r)
     /*
     arr[l] = arr[l] + arr[r];   //a = a+b;
     arr[r] = arr[l] - arr[r];   //b = a-b;
-    arr[l] = arr[l] - arr[r];   //b = a-b;
+    arr[l] = arr[l] - arr[r];   //a = a-b;
     */
-   int temp = arr[l];
-   arr[l] = arr[r];
-   arr[r] = temp;
+    
+    int temp = arr[l];
+    arr[l] = arr[r];
+    arr[r] = temp;
 }
 
 int* partition(int arr[], int l, int r)
